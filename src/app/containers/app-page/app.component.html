@@ -1,0 +1,14 @@
+<div class="page-container">
+  <app-date-range [dateGroup]="group"></app-date-range>
+  <div class="form-button" (click)="onFind()">Find</div>
+  <div class="result-container" *ngIf="values$ | async as values">
+    <ul>
+      <li *ngFor="let bitcoinVal of values">
+        <div class="form-field">
+          <div>{{ bitcoinVal.date }}</div>
+          <div>$ {{ bitcoinVal.value | number: '1.2' }}</div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
